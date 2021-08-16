@@ -4,6 +4,11 @@ library(tidyverse)
 setwd('~/dev/psydata/data-raw')
 
 
+shootings <- read_csv('shootings.csv') %>%
+  set_names(names(.) %>% tolower) %>%
+  as.data.frame()  # not tibble because BayesFactor package
+
+
 grass <- CO2 %>%
   as.data.frame() %>%
   set_names(names(.) %>% tolower) %>%
@@ -12,17 +17,66 @@ grass <- CO2 %>%
 
 
 fuel <- mtcars %>%
-  rename(engine_size = disp, power=hp) %>%
+  rename(engine_size = disp, power=hp, weight=wt) %>%
   mutate(automatic = am == 1) %>%
-  select(-drat, -qsec, -am) %>%
+  select(-drat, -qsec, -am, -vs, -carb) %>%
+  mutate(engine_size = round(engine_size*16.3871, -1)) %>% #convert to cc and round
+  mutate(weight = round(weight * 0.453592 * 1000, 0)) %>% # in kg
   as.data.frame()
 
 
-fit <-
+funimagery <-
   read.csv('fit_blind_data.csv') %>%
-  mutate(group=factor(group, levels=c(1,2), labels=c("MI", "FIT"))) %>%
+  mutate(intervention=factor(group, levels=c(1,2), labels=c("MI", "FIT"))) %>%
+  select(-group) %>%
+  mutate(weight_lost = kg3 - kg1) %>%
   filter(complete.cases(.))
 
 
-usethis::use_data(grass, fuel, FIT, overwrite=T)
+kidiq <-
+  read_csv('kidiq.csv') %>%
+  as.data.frame()
+kidiq %>% glimpse
+
+
+painmusic <-
+  read_csv('painmusic.csv') %>%
+  as.data.frame() %>%
+  rename(pain.no.music = no.music, pain.with.music=with.music)
+
+painmusic %>% glimpse
+
+development <- gapminder::gapminder %>%
+  set_names(names(.) %>% tolower) %>%
+  rename(gdp_per_capita = gdppercap, life_expectancy = lifeexp, population=pop)
+
+development %>% glimpse
+
+
+# journal.pone.0218243.s006 <-
+#   haven::read_sav('journal.pone.0218243.s005.sav')
+
+earnings <-
+  read_csv('cps2.csv') %>%
+  as.data.frame() %>%
+  rename(id = ID, gender=sex)
+
+
+earnings2 <- earnings
+
+earnings <- earnings %>% filter(complete.cases(.))
+
+
+
+
+usethis::use_data(grass,
+                  fuel,
+                  funimagery,
+                  shootings,
+                  kidiq,
+                  painmusic,
+                  development,
+                  earnings,
+                  earnings2,
+                  overwrite=T)
 
