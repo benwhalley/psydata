@@ -4,11 +4,6 @@ library(tidyverse)
 setwd('~/dev/psydata/data-raw')
 
 
-shootings <- read_csv('shootings.csv') %>%
-  set_names(names(.) %>% tolower) %>%
-  as.data.frame()  # not tibble because BayesFactor package
-
-
 grass <- CO2 %>%
   as.data.frame() %>%
   set_names(names(.) %>% tolower) %>%
@@ -29,7 +24,7 @@ funimagery <-
   read.csv('fit_blind_data.csv') %>%
   mutate(intervention=factor(group, levels=c(1,2), labels=c("MI", "FIT"))) %>%
   select(-group) %>%
-  mutate(weight_lost = kg3 - kg1) %>%
+  mutate(weight_lost_end_trt = kg2 - kg1) %>%
   filter(complete.cases(.))
 
 
@@ -72,7 +67,6 @@ earnings <- earnings %>% filter(complete.cases(.))
 usethis::use_data(grass,
                   fuel,
                   funimagery,
-                  shootings,
                   kidiq,
                   painmusic,
                   development,
