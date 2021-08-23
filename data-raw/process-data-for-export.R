@@ -56,12 +56,21 @@ earnings <-
   as.data.frame() %>%
   rename(id = ID, gender=sex)
 
-
 earnings2 <- earnings
 
 earnings <- earnings %>% filter(complete.cases(.))
 
 
+# https://worldhappiness.report/ed/2021/#appendices-and-data
+hap <- readxl::read_excel('DataPanelWHR2021C2.xls')
+happy <- hap %>%
+  set_names(names(.) %>% tolower() %>% str_replace_all(" ", "_")) %>%
+  rename(country=country_name, happiness=life_ladder) %>%
+  mutate(gdp_per_capita = exp(log_gdp_per_capita)) %>%
+  select(-log_gdp_per_capita) %>%
+  as.data.frame()
+
+happy %>% glimpse
 
 
 usethis::use_data(grass,
@@ -72,5 +81,6 @@ usethis::use_data(grass,
                   development,
                   earnings,
                   earnings2,
+                  happy,
                   overwrite=T)
 
