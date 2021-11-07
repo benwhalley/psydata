@@ -51,6 +51,55 @@
 "fit"
 
 
+
+#' Data from Kang et al. 2018: "PTSD correlates with somatization in sexually abused children: Type of abuse moderates the effect of PTSD on somatization"
+#'
+#' A dataset A data frame with 63 observations on 10 variables.
+#'
+#' @format A data frame with 63 rows and 10 columns:
+#' \describe{
+#'   \item{participant}{Identifier}
+#'   \item{age}{In years}
+#'   \item{fsiq}{Full-Scale IQ from the Korean version IV of the Wechsler Intelligence Scale for Children}
+#'   \item{perpetrator_gender}{}
+#'   \item{parents}{Describes who the child lived with}
+#'   \item{perpetrator_relation}{Relationship of the perpetrator to the child}
+#'   \item{number_of_perpetrators}{Single or multiple}
+#'   \item{type_of_abuse}{Nature of the abuse experienced}
+#'   \item{tscc_pts}{Trauma Symptom Checklist for Children score}
+#'   \item{cbcl_som}{A somatization measure, based on the Child Behavioral Checklist items 6–18}
+#'
+#'   ...
+#' }
+#' @source \url{https://doi.org/10.1371/journal. pone.0199138}
+"kang2018"
+
+
+
+#' BMI and quality of life data, based on the Health Survey England 2005 and 2008 cohorts,
+#'
+#' A data frame with 35,916 rows and 11 columns.
+#'
+#' @format A data frame with 63 rows and 10 columns:
+#' \describe{
+#'   \item{id}{Identifier}
+#'   \item{age}{In years}
+#'   \item{bmi}{Body mass index}
+#'   \item{sex}{Biological sex of participant}
+#'   \item{eq5d}{Health utility (quality of life) based on EQ-5D. 1 = perfect health.}
+#'   \item{perpetrator_relation}{Relationship of the perpetrator to the child}
+#'   \item{number_of_perpetrators}{Single or multiple}
+#'   \item{type_of_abuse}{Nature of the abuse experienced}
+#'   \item{tscc_pts}{Trauma Symptom Checklist for Children score}
+#'   \item{cbcl_som}{A somatization measure, based on the Child Behavioral Checklist items 6–18}
+#'
+#'   ...
+#' }
+#' @source \url{https://doi.org/10.1371/journal. pone.0199138}
+"kang2018"
+
+
+
 .onLoad <- function(libname, pkgname){
   packageStartupMessage("Loading datasets for teaching R to psychology students.")
 

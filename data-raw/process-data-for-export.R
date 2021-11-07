@@ -20,6 +20,19 @@ fuel <- mtcars %>%
   as.data.frame()
 
 
+
+
+kang2018 <-
+  read_csv('kang-2018.csv') %>%
+  set_names(names(.) %>% tolower()) %>%
+  rename(perpetrator_gender=perpetrator, number_of_perpetrators = numberofperpetrator, perpetrator_relation = perprel, type_of_abuse=typeofabuse, participant = participants) %>%
+  mutate(across(c(parents, perpetrator_gender, perpetrator_relation, type_of_abuse), factor)) %>%
+  mutate(number_of_perpetrators = ordered(number_of_perpetrators, levels=c("single", "multiple"))) %>%
+  as.data.frame()
+
+kang2018 %>% glimpse
+kang2018$number_of_perpetrators %>% unique
+
 funimagery <-
   read.csv('fit_blind_data.csv') %>%
   mutate(intervention=factor(group, levels=c(1,2), labels=c("MI", "FIT"))) %>%
@@ -73,6 +86,23 @@ happy <- hap %>%
 happy %>% glimpse
 
 
+
+
+studyhabits <-
+  read_csv('studyhabitsandgrades.csv') %>%
+  as.data.frame() %>%
+  mutate(unique_id = factor(unique_id))
+
+studyhabits %>% glimpse
+
+
+bmi <- read_csv('hse_bmi_2005-2008.csv') %>%
+  select(id, bmi, age, sex, eq5d=eqmean, mobility, selfcare, usualact, pain, anxiety, cohort) %>%
+  mutate(bmi = ifelse(bmi<0, NA, bmi), id=row_number()) %>%
+  mutate(eq5d = ifelse(eq5d < 0, NA, eq5d)) %>%
+  mutate(sex = factor(sex, levels=1:2, labels=c("Male", "Female")))
+bmi %>% View
+
 usethis::use_data(grass,
                   fuel,
                   funimagery,
@@ -82,5 +112,11 @@ usethis::use_data(grass,
                   earnings,
                   earnings2,
                   happy,
+                  studyhabits,
+                  kang2018,
+                  bmi,
                   overwrite=T)
+
+
+
 
