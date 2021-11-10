@@ -22,16 +22,16 @@ fuel <- mtcars %>%
 
 
 
-kang2018 <-
-  read_csv('kang-2018.csv') %>%
+bae2018 <-
+  read_csv('bae-2018.csv') %>%
   set_names(names(.) %>% tolower()) %>%
   rename(perpetrator_gender=perpetrator, number_of_perpetrators = numberofperpetrator, perpetrator_relation = perprel, type_of_abuse=typeofabuse, participant = participants) %>%
   mutate(across(c(parents, perpetrator_gender, perpetrator_relation, type_of_abuse), factor)) %>%
   mutate(number_of_perpetrators = ordered(number_of_perpetrators, levels=c("single", "multiple"))) %>%
   as.data.frame()
 
-kang2018 %>% glimpse
-kang2018$number_of_perpetrators %>% unique
+bae2018 %>% glimpse
+#bae2018$number_of_perpetrators %>% unique
 
 funimagery <-
   read.csv('fit_blind_data.csv') %>%
@@ -113,7 +113,7 @@ usethis::use_data(grass,
                   earnings2,
                   happy,
                   studyhabits,
-                  kang2018,
+                  bae2018,
                   bmi,
                   overwrite=T)
 

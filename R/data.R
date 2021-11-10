@@ -52,7 +52,7 @@
 
 
 
-#' Data from Kang et al. 2018: "PTSD correlates with somatization in sexually abused children: Type of abuse moderates the effect of PTSD on somatization"
+#' Data from Bae et al. 2018: "PTSD correlates with somatization in sexually abused children: Type of abuse moderates the effect of PTSD on somatization"
 #'
 #' A dataset A data frame with 63 observations on 10 variables.
 #'
@@ -72,7 +72,7 @@
 #'   ...
 #' }
 #' @source \url{https://doi.org/10.1371/journal. pone.0199138}
-"kang2018"
+"bae2018"
 
 
 
@@ -96,7 +96,7 @@
 #'   ...
 #' }
 #' @source \url{https://doi.org/10.1371/journal. pone.0199138}
-"kang2018"
+"bmi"
 
 
 
