@@ -99,6 +99,32 @@
 "bmi"
 
 
+#' Simplified data from Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
+#'
+#' Data on aging and reaction time, collected with a WII fit device.
+#'
+#' @format A data frame with 354 rows and 4 columns:
+#' \describe{
+#'   \item{gender}{Gender}
+#'   \item{rt_hand_dominant}{Reaction time (dominant hand)}
+#'   \item{age_years}{Age in years}
+#'   \item{n_medicines}{Number of medicines prescribed}
+#'   ...
+#' }
+#' @source \url{https://doi.org/10.1371/journal.pone.0189598.s001}
+"wii_rt"
+
+
+
+#' A tidied (long form) version of `wii_rt` from this package
+#'
+"wii_rt_tidy"
+
+#' A copy of the built-in `attitude` data, with an added `participant` column to demonstrate reshaping
+#'
+"employees"
+
+
 
 .onLoad <- function(libname, pkgname){
   packageStartupMessage("Loading datasets for teaching R to psychology students.")

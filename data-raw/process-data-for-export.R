@@ -103,6 +103,65 @@ bmi <- read_csv('hse_bmi_2005-2008.csv') %>%
   mutate(sex = factor(sex, levels=1:2, labels=c("Male", "Female")))
 bmi %>% View
 
+
+
+
+
+
+download.file('https://doi.org/10.1371/journal.pone.0189598.s001', 'journal.pone.0189598.s001.xlsx')
+rtdata <- readxl::read_excel('journal.pone.0189598.s001.xlsx')
+rtdata %>% glimpse
+(wii_rt <- rtdata %>%
+  transmute(gender = `Sex (M=1)`,
+            rt_hand_dominant = `RTH-D`,
+            rt_foot_dominant = `RTF-D`,
+            rt_hand_nondominant = `RTH-ND`,
+            rt_foot_nondominant = `RTF-ND`,
+            age_years = `Age`, n_medicines = `Medicin (n)`)
+)
+
+
+wii_rt_tidy <- wii_rt %>%
+  mutate(participant=row_number()) %>%
+  mutate(gender=factor(gender, levels=2:1, labels=c("Female", "Male"))) %>%
+  pivot_longer(starts_with('rt')) %>%
+  separate(name, into=c("_", "response", "dominant")) %>%
+  mutate_at(vars(response, dominant), tools::toTitleCase) %>%
+  mutate_at(vars(response, dominant), factor) %>%
+  rename(rt=value) %>%
+  select( participant, everything(), -`_`) %>%
+  mutate(dominant=str_replace(dominant, "Nondominant", "Non-dominant"))
+wii_rt_tidy %>% glimpse
+
+
+
+(vermeer <- rio::import('vermeer-2015.xlsx') %>%
+    set_names(names(.) %>% tolower()) %>%
+    select(-fdcond, -fdgt))
+vermeer %>% glimpse
+#
+# vermeer %>%
+#   ggplot(aes(feedback, response, color=feedback)) +
+#   stat_summary() +
+#   facet_grid(~condition)
+
+
+# wii_rt %>%
+#   ggplot(aes(age_years, rt_hand_dominant)) +
+#   geom_jitter() + geom_smooth() +
+#   facet_grid(~cut(n_medicines, c(0,2,4,6,8,10,12,Inf)))
+#
+#
+# wii_rt %>%
+#   ggplot(aes(factor(n_medicines), rt_hand_dominant)) +
+#   geom_boxplot()
+
+
+employees <- attitude %>%
+  mutate(participant = row_number(), .before=1) %>%
+  as_tibble()
+
+
 usethis::use_data(grass,
                   fuel,
                   funimagery,
@@ -115,6 +174,9 @@ usethis::use_data(grass,
                   studyhabits,
                   bae2018,
                   bmi,
+                  wii_rt,
+                  wii_rt_tidy,
+                  employees,
                   overwrite=T)
 
 

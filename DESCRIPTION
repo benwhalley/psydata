@@ -1,12 +1,11 @@
 Package: psydata
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.1
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Simplified versions of open/example datasets for teaching R.
+Version: 0.1.3
+Author: Ben Whalley
+Maintainer: Ben Whalley <ben.whalley@plymouth.ac.uk>
+Description: Simplified/tidied versions of open datasets from tidyverse, PLOS and elsewhere.
+License: CC0 (but some datasets may be licenced differently in which case that applies; see individual help files.)
 Encoding: UTF-8
 LazyData: true
 Depends: 
