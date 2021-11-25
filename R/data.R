@@ -4,12 +4,17 @@
 #'
 #' @format A data frame with 112 rows and 7 variables:
 #' \describe{
-#'   \item{kg1}{XXX TODO COMPLETE LIST HERE}
-#'
-#'   ...
+#'   \item{kg1}{Weight at baseline}
+#'   \item{kg2}{Weight at end of treatment}
+#'   \item{kg3}{Weight at 12 month followup}
+#'   \item{gender}{}
+#'   \item{intervention}{FIT or MI (control) treatment}
+#'   \item{person}{Identifier}
+#'   \item{age}{In years}
+#'   \item{weight_lost_end_trt}{kg2 minus kg1}
 #' }
 #' @source \url{https://zenodo.org/record/1120364#.YRF9ai9Q2CM}
-"fit"
+"funimagery"
 
 
 
@@ -33,22 +38,16 @@
 #'   ...
 #' }
 #' @source \url{https://worldhappiness.report/ed/2021}
-"fit"
+"happy"
+
 
 
 
 #' Simplified dataset based on the classic mtcars data
 #'
 #' A dataset A data frame with 32 observations on 11 (numeric) variables.
-#'
-#' @format A data frame with 112 rows and 7 variables:
-#' \describe{
-#'   \item{kg1}{XXX TODO COMPLETE LIST HERE}
-#'
-#'   ...
-#' }
-#' @source \url{https://zenodo.org/record/1120364#.YRF9ai9Q2CM}
-"fit"
+#' See help(mtcars) for details of this dataset.
+"fuel"
 
 
 
@@ -68,8 +67,6 @@
 #'   \item{type_of_abuse}{Nature of the abuse experienced}
 #'   \item{tscc_pts}{Trauma Symptom Checklist for Children score}
 #'   \item{cbcl_som}{A somatization measure, based on the Child Behavioral Checklist items 6–18}
-#'
-#'   ...
 #' }
 #' @source \url{https://doi.org/10.1371/journal. pone.0199138}
 "bae2018"
@@ -85,31 +82,31 @@
 #'   \item{id}{Identifier}
 #'   \item{age}{In years}
 #'   \item{bmi}{Body mass index}
-#'   \item{sex}{Biological sex of participant}
+#'   \item{sex}{}
 #'   \item{eq5d}{Health utility (quality of life) based on EQ-5D. 1 = perfect health.}
-#'   \item{perpetrator_relation}{Relationship of the perpetrator to the child}
-#'   \item{number_of_perpetrators}{Single or multiple}
-#'   \item{type_of_abuse}{Nature of the abuse experienced}
-#'   \item{tscc_pts}{Trauma Symptom Checklist for Children score}
-#'   \item{cbcl_som}{A somatization measure, based on the Child Behavioral Checklist items 6–18}
-#'
-#'   ...
+#'   \item{mobility}{EQ5D item score}
+#'   \item{selfcare}{EQ5D item score}
+#'   \item{usualact}{EQ5D item score}
+#'   \item{pain}{EQ5D item score}
+#'   \item{anxiety}{EQ5D item score}
+#'   \item{cohort}{Year of survey}
 #' }
-#' @source \url{https://doi.org/10.1371/journal. pone.0199138}
+#' @source \url{Data based on the HSE 2005 and 2008 cohorts. See: https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england#past-publications }
 "bmi"
 
 
-#' Simplified data from Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
-#'
 #' Data on aging and reaction time, collected with a WII fit device.
+#' A simplified version of the dataset in Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
 #'
 #' @format A data frame with 354 rows and 4 columns:
 #' \describe{
-#'   \item{gender}{Gender}
+#'   \item{gender}{Self identified}
 #'   \item{rt_hand_dominant}{Reaction time (dominant hand)}
+#'   \item{rt_foot_dominant}{Reaction time (dominant hand)}
+#'   \item{rt_hand_nondominant}{Reaction time (non-dominant hand)}
+#'   \item{rt_foot_nondominant}{Reaction time (non-dominant hand)}
 #'   \item{age_years}{Age in years}
 #'   \item{n_medicines}{Number of medicines prescribed}
-#'   ...
 #' }
 #' @source \url{https://doi.org/10.1371/journal.pone.0189598.s001}
 "wii_rt"
@@ -117,13 +114,20 @@
 
 
 #' A tidied (long form) version of `wii_rt` from this package
-#'
+#' See `help(wii_rt)`
 "wii_rt_tidy"
 
-#' A copy of the built-in `attitude` data, with an added `participant` column to demonstrate reshaping
-#'
-"employees"
 
+
+#' Data on superheros
+#' `heroes_meta` and `heroes_personal` are datasets intended to teach combining datasets.
+#' @source \url{https://www.kaggle.com/claudiodavi/superhero-set/version/1}
+"heroes_meta"
+
+#' Data on superheros
+#' `heroes_meta` and `heroes_personal` are datasets intended to teach combining datasets.
+#' @source \url{https://www.kaggle.com/claudiodavi/superhero-set/version/1}
+"heroes_personal"
 
 
 .onLoad <- function(libname, pkgname){

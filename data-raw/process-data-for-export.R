@@ -101,7 +101,7 @@ bmi <- read_csv('hse_bmi_2005-2008.csv') %>%
   mutate(bmi = ifelse(bmi<0, NA, bmi), id=row_number()) %>%
   mutate(eq5d = ifelse(eq5d < 0, NA, eq5d)) %>%
   mutate(sex = factor(sex, levels=1:2, labels=c("Male", "Female")))
-bmi %>% View
+
 
 
 
@@ -157,9 +157,41 @@ vermeer %>% glimpse
 #   geom_boxplot()
 
 
+heroes <- rio::import('heroes_information.csv') %>%
+  janitor::clean_names() %>%
+  mutate_at(vars(gender, eye_color, race), factor)
+
+set.seed(1234)
+heroes_meta <- heroes %>% select(name, publisher) %>% sample_frac(.9)
+heroes_personal <- heroes %>% select(name, gender, eye_color, race, height, weight) %>% sample_frac(.9)
+
+heroes_personal %>% glimpse
+# show missing data on each side lead to different N
+left_join(heroes_meta, heroes_personal) %>% count()
+left_join(heroes_personal, heroes_meta) %>% count()
+inner_join(heroes_meta, heroes_personal) %>% count()
+right_join(heroes_meta, heroes_personal) %>% count()
+
+
 employees <- attitude %>%
   mutate(participant = row_number(), .before=1) %>%
   as_tibble()
+
+
+
+
+
+
+
+
+
+# ASSESSMENT DATASETS FOR PLYMOUTH MODULES
+
+rmipx1 <- read_csv('rmipx_1.csv')
+
+
+
+
 
 
 usethis::use_data(grass,
@@ -177,6 +209,11 @@ usethis::use_data(grass,
                   wii_rt,
                   wii_rt_tidy,
                   employees,
+                  heroes_meta,
+                  heroes_personal,
+
+                  #ASSESSMENT DATA
+                  rmipx1,
                   overwrite=T)
 
 
