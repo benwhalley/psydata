@@ -159,7 +159,8 @@ vermeer %>% glimpse
 
 heroes <- rio::import('heroes_information.csv') %>%
   janitor::clean_names() %>%
-  mutate_at(vars(gender, eye_color, race), factor)
+  mutate_at(vars(gender, eye_color, race), factor) %>%
+  mutate_if(is.numeric, function(x){ifelse(x==-99, NA, x)})
 
 set.seed(1234)
 heroes_meta <- heroes %>% select(name, publisher) %>% sample_frac(.9)

@@ -1,7 +1,7 @@
 Package: psydata
 Type: Package
 Title: Simplified versions of open/example datasets for teaching R.
-Version: 0.1.4
+Version: 0.1.5
 Author: Ben Whalley
 Maintainer: Ben Whalley <ben.whalley@plymouth.ac.uk>
 Description: Simplified/tidied versions of open datasets from tidyverse, PLOS and elsewhere.
