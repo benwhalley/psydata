@@ -183,6 +183,12 @@ employees <- attitude %>%
 
 
 
+set.seed(2021)
+messy_exp <- expand.grid( person=1:100, cond = c("A","B"), time=1:3) %>%
+  mutate(condition=paste(paste0("participant",person), cond, time, sep="-")) %>%
+  arrange(person) %>%
+  mutate(rt=rpois(nrow(.), 300+20*time+10*(time-1)*as.numeric(cond=="B"))) %>%
+  select(condition, rt)
 
 
 
@@ -212,7 +218,7 @@ usethis::use_data(grass,
                   employees,
                   heroes_meta,
                   heroes_personal,
-
+                  messy_exp,
                   #ASSESSMENT DATA
                   rmipx1,
                   overwrite=T)

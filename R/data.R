@@ -129,6 +129,14 @@
 #' @source \url{https://www.kaggle.com/claudiodavi/superhero-set/version/1}
 "heroes_personal"
 
+#' Untidy (simulated) experimental data
+#' @format A data frame with 2 columns:
+#' \describe{
+#'   \item{condition}{An untidy variable combining participant number, condition (A/B) and time (1:3)}
+#'   \item{rt}{Reaction time}
+#' }
+"messy_exp"
+
 
 .onLoad <- function(libname, pkgname){
   packageStartupMessage("Loading datasets for teaching R to psychology students.")
