@@ -138,6 +138,18 @@
 "messy_exp"
 
 
+
+
+#' Data from Holmgren et al 2018
+#' @source \url{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0203263}
+"holmgren2018"
+
+
+
+#' Data from Egger et al 2019
+#' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6402646/}
+"egger2019"
+
 .onLoad <- function(libname, pkgname){
   packageStartupMessage("Loading datasets for teaching R to psychology students.")
 

@@ -192,9 +192,21 @@ messy_exp <- expand.grid( person=1:100, cond = c("A","B"), time=1:3) %>%
 
 
 
+
+# homgren_f <- utils::download.file('https://files.osf.io/v1/resources/t45zd/providers/osfstorage/594a860eb83f69022818b8d1?action=download&direct&version=1', "homgren.sav")
+holmgren2018 <- rio::import('homgren.sav') %>%  janitor::clean_names()
+#holmgren2018 %>%
+#  glimpse
+
+egger2019 <- rio::import("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6402646/bin/pone.0212482.s001.sav") %>%
+  janitor::clean_names()
+
+egger2019 %>% glimpse
+
 # ASSESSMENT DATASETS FOR PLYMOUTH MODULES
 
 rmipx1 <- read_csv('rmipx_1.csv')
+
 
 
 
@@ -209,7 +221,9 @@ usethis::use_data(grass,
                   development,
                   earnings,
                   earnings2,
+                  egger2019,
                   happy,
+                  holmgren2018,
                   studyhabits,
                   bae2018,
                   bmi,
