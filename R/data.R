@@ -150,6 +150,12 @@
 #' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6402646/}
 "egger2019"
 
+
+
+#' Simulated data on academic achievement and time spent gaming
+"amongus"
+
+
 .onLoad <- function(libname, pkgname){
   packageStartupMessage("Loading datasets for teaching R to psychology students.")
 

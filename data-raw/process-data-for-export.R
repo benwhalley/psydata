@@ -180,6 +180,9 @@ employees <- attitude %>%
 
 
 
+amongus <- rio::import('amongus.csv')
+
+
 
 
 
@@ -213,7 +216,8 @@ rmipx1 <- read_csv('rmipx_1.csv')
 
 
 
-usethis::use_data(grass,
+usethis::use_data(amongus,
+                  grass,
                   fuel,
                   funimagery,
                   kidiq,
