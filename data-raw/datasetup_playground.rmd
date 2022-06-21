@@ -1,0 +1,26 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+kuhberger2014 <- haven::read_sav('pone.0105825.s002.sav' ) %>% 
+  mutate_if(haven::is.labelled, as_factor) %>% 
+  glimpse
+
+kuhberger2014 %>% 
+  ggplot(aes(Nreported, r)) + 
+  geom_point() + 
+  scale_x_log10() + 
+  geom_smooth(se=F, method=lm, aes(group=1))
+
+```
+
+
+
+rio::import('pone.0192163.s003.xlsx') %>% 
+  arrange(ID, Group) %>% 
+  filter(!is.na(Group)) %>% glimpse
+  
+```
+

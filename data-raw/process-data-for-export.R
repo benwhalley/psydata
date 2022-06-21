@@ -23,9 +23,10 @@ fuel <- mtcars %>%
 
 
 bae2018 <-
-  read_csv('bae-2018.csv') %>%
-  set_names(names(.) %>% tolower()) %>%
-  rename(perpetrator_gender=perpetrator, number_of_perpetrators = numberofperpetrator, perpetrator_relation = perprel, type_of_abuse=typeofabuse, participant = participants) %>%
+  rio::import('pone.0199138.s002.xlsx') %>%
+  set_names(names(.) %>% tolower() %>% str_replace_all(., " ", "")) %>%
+  rename(perpetrator_gender=perpetrator, number_of_perpetrators = numberofperpetrator,
+         perpetrator_relation = `...6`, type_of_abuse=typeofabuse, participant = participants) %>%
   mutate(across(c(parents, perpetrator_gender, perpetrator_relation, type_of_abuse), factor)) %>%
   mutate(number_of_perpetrators = ordered(number_of_perpetrators, levels=c("single", "multiple"))) %>%
   as.data.frame()
@@ -212,8 +213,15 @@ rmipx1 <- read_csv('rmipx_1.csv')
 
 
 
+# there was something wacky about pone.0192163.s002.txt but opening in excel and saving in xlsx with no other changes helped
+im2018 <- rio::import('pone.0192163.s002.txt.xlsx') %>%
+  set_names(names(.) %>% tolower())
 
 
+kuhberger2014 <- haven::read_sav('pone.0105825.s002.sav' ) %>%
+  mutate_if(haven::is.labelled, as_factor) %>%
+  filter(!is.na(r)) %>%
+  glimpse
 
 
 usethis::use_data(amongus,
@@ -239,6 +247,8 @@ usethis::use_data(amongus,
                   messy_exp,
                   #ASSESSMENT DATA
                   rmipx1,
+                  im2018,
+                  kuhberger2014,
                   overwrite=T)
 
 

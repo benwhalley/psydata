@@ -151,6 +151,17 @@
 "egger2019"
 
 
+#' Summary data from Im 2018
+#' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5798820/}
+"im2018"
+
+#' Data from Kühberger, Fritz, and Scherndl, 2014.
+#'
+#' Converted to R factors from SPSS labelled data
+#' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4156299/}
+"kuhberger2014"
+
+
 
 #' Simulated data on academic achievement and time spent gaming
 "amongus"
