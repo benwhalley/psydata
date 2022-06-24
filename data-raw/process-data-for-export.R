@@ -224,6 +224,11 @@ kuhberger2014 <- haven::read_sav('pone.0105825.s002.sav' ) %>%
   glimpse
 
 
+
+mentalh <- read_csv('https://raw.githubusercontent.com/chrisjberry/Teaching/master/1_mental_health_data.csv')
+mentalh
+
+
 usethis::use_data(amongus,
                   grass,
                   fuel,
@@ -249,6 +254,7 @@ usethis::use_data(amongus,
                   rmipx1,
                   im2018,
                   kuhberger2014,
+                  mentalh,
                   overwrite=T)
 
 
