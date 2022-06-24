@@ -3,10 +3,9 @@
 \docType{data}
 \name{kuhberger2014}
 \alias{kuhberger2014}
-\title{Data from Kühberger, Fritz, and Scherndl, 2014.
-Converted to factors from SPSS labelled data}
+\title{Data from Kühberger, Fritz, and Scherndl, 2014.}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 531 rows and 17 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 395 rows and 17 columns.
 }
 \source{
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4156299/}
@@ -15,7 +14,6 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 kuhberger2014
 }
 \description{
-Data from Kühberger, Fritz, and Scherndl, 2014.
-Converted to factors from SPSS labelled data
+Converted to R factors from SPSS labelled data
 }
 \keyword{datasets}

@@ -162,6 +162,30 @@
 "kuhberger2014"
 
 
+#' Summary data from Im 2018
+#'
+#' Teychenne and Hinkley (2016) used regression to investigate the association between anxiety and daily hours of screen time (e.g., TV, computer, or device use) in 528 mothers with young children.
+#' Some variable names have been changed from the original source for clarity.
+#' #' \describe{
+#'   \item{id}{Study id}
+#'   \item{age}{Age in years}
+#'   \item{anxiety_score}{Anxiety score}
+#'   \item{screen_time}{Time spent on screens in hours}
+#'   \item{physical_activity}{Time spent physical activity in hours}
+#'   \item{tv}{TV use in hours}
+#'   \item{computer}{Computer use in hours}
+#'   \item{bmi}{Body mass index}
+#'   \item{education}{Education}
+#'   \item{marital_status}{Marital_status}
+#'   \item{disability_health}{Disability_health}
+#' }
+#'
+#' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871535/}
+#' @source \url{#' https://dro.deakin.edu.au/view/DU:30083409}
+"mentalh"
+
+
+
 
 #' Simulated data on academic achievement and time spent gaming
 "amongus"
