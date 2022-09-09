@@ -1,18 +1,14 @@
 #' Simplified dataset based on Solbrig et al 2017
 #'
-#' A dataset containing patient outcome data from an RCT of functional imagery training for weight loss.
+#' A dataset containing patient outcome data from an RCT of functional imagery
+#' training for weight loss.
 #'
-#' @format A data frame with 112 rows and 7 variables:
-#' \describe{
-#'   \item{kg1}{Weight at baseline}
-#'   \item{kg2}{Weight at end of treatment}
-#'   \item{kg3}{Weight at 12 month followup}
-#'   \item{gender}{}
+#' @format A data frame with 112 rows and 7 variables: \describe{
+#'   \item{kg1}{Weight at baseline} \item{kg2}{Weight at end of treatment}
+#'   \item{kg3}{Weight at 12 month followup} \item{gender}{}
 #'   \item{intervention}{FIT or MI (control) treatment}
-#'   \item{person}{Identifier}
-#'   \item{age}{In years}
-#'   \item{weight_lost_end_trt}{kg2 minus kg1}
-#' }
+#'   \item{person}{Identifier} \item{age}{In years}
+#'   \item{weight_lost_end_trt}{kg2 minus kg1} }
 #' @source \url{https://zenodo.org/record/1120364#.YRF9ai9Q2CM}
 "funimagery"
 
@@ -20,7 +16,8 @@
 
 #' Simplified dataset based the Gallup World Happiness report
 #'
-#' A dataset containing nation-level indicators for life staisfaction and happiness
+#' A dataset containing nation-level indicators for life staisfaction and
+#' happiness
 #'
 #' @format A data frame with 1949 rows and 11 columns:
 #' \describe{
@@ -43,7 +40,7 @@
 
 
 
-#' Simplified dataset based on the classic mtcars data
+#' Simplified dataset based on the standard mtcars data
 #'
 #' A dataset A data frame with 32 observations on 11 (numeric) variables.
 #' See help(mtcars) for details of this dataset.
@@ -73,7 +70,8 @@
 
 
 
-#' BMI and quality of life data, based on the Health Survey England 2005 and 2008 cohorts,
+#' BMI and quality of life data, based on the Health Survey England 2005 and
+#' 2008 cohorts,
 #'
 #' A data frame with 35,916 rows and 11 columns.
 #'
@@ -95,8 +93,9 @@
 "bmi"
 
 
-#' Data on aging and reaction time, collected with a WII fit device.
-#' A simplified version of the dataset in Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
+#' Data on aging and reaction time, collected with a WII fit device. A
+#' simplified version of the dataset in Blomkvist et al 2017,
+#' https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
 #'
 #' @format A data frame with 354 rows and 4 columns:
 #' \describe{
@@ -164,8 +163,10 @@
 
 #' Summary data from Im 2018
 #'
-#' Teychenne and Hinkley (2016) used regression to investigate the association between anxiety and daily hours of screen time (e.g., TV, computer, or device use) in 528 mothers with young children.
-#' Some variable names have been changed from the original source for clarity.
+#' Teychenne and Hinkley (2016) used regression to investigate the association
+#' between anxiety and daily hours of screen time (e.g., TV, computer, or device
+#' use) in 528 mothers with young children. Some variable names have been
+#' changed from the original source for clarity.
 #' #' \describe{
 #'   \item{id}{Study id}
 #'   \item{age}{Age in years}
@@ -183,8 +184,6 @@
 #' @source \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4871535/}
 #' @source \url{#' https://dro.deakin.edu.au/view/DU:30083409}
 "mentalh"
-
-
 
 
 #' Simulated data on academic achievement and time spent gaming
