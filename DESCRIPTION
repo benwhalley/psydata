@@ -1,10 +1,10 @@
 Package: psydata
 Type: Package
 Title: Simplified open/example datasets for teaching R and helper functions.
-Version: 0.1.7
+Version: 0.1.8
 Author: Ben Whalley
 Maintainer: Ben Whalley <ben.whalley@plymouth.ac.uk>
-Description: Simplified/tidied versions of open datasets from tidyverse, PLOS and elsewhere plus various helper funtions for those learning R.
+Description: Simplified/tidied versions of open datasets from tidyverse, PLOS and elsewhere.
 License: CC0 for this work but some datasets may be licenced differently in which case those licences apply; see individual help files for details.
 Encoding: UTF-8
 LazyData: true
@@ -12,8 +12,5 @@ Depends:
     R (>= 2.10)
 Imports:
     magrittr,
-    arm,
-    dplyr,
-    broom,
-    stringr
+    dplyr
 RoxygenNote: 7.1.1

@@ -28,6 +28,7 @@ A data frame with 1949 rows and 11 columns:
 happy
 }
 \description{
-A dataset containing nation-level indicators for life staisfaction and happiness
+A dataset containing nation-level indicators for life staisfaction and
+happiness
 }
 \keyword{datasets}

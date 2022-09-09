@@ -3,8 +3,9 @@
 \docType{data}
 \name{wii_rt}
 \alias{wii_rt}
-\title{Data on aging and reaction time, collected with a WII fit device.
-A simplified version of the dataset in Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598}
+\title{Data on aging and reaction time, collected with a WII fit device. A
+simplified version of the dataset in Blomkvist et al 2017,
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598}
 \format{
 A data frame with 354 rows and 4 columns:
 \describe{
@@ -24,7 +25,8 @@ A data frame with 354 rows and 4 columns:
 wii_rt
 }
 \description{
-Data on aging and reaction time, collected with a WII fit device.
-A simplified version of the dataset in Blomkvist et al 2017, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
+Data on aging and reaction time, collected with a WII fit device. A
+simplified version of the dataset in Blomkvist et al 2017,
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0189598
 }
 \keyword{datasets}

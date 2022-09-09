@@ -16,8 +16,10 @@ An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, 
 mentalh
 }
 \description{
-Teychenne and Hinkley (2016) used regression to investigate the association between anxiety and daily hours of screen time (e.g., TV, computer, or device use) in 528 mothers with young children.
-Some variable names have been changed from the original source for clarity.
+Teychenne and Hinkley (2016) used regression to investigate the association
+between anxiety and daily hours of screen time (e.g., TV, computer, or device
+use) in 528 mothers with young children. Some variable names have been
+changed from the original source for clarity.
 #' \describe{
   \item{id}{Study id}
   \item{age}{Age in years}

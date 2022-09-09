@@ -3,7 +3,8 @@
 \docType{data}
 \name{bmi}
 \alias{bmi}
-\title{BMI and quality of life data, based on the Health Survey England 2005 and 2008 cohorts,}
+\title{BMI and quality of life data, based on the Health Survey England 2005 and
+2008 cohorts,}
 \format{
 A data frame with 63 rows and 10 columns:
 \describe{
